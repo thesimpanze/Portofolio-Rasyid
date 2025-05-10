@@ -1,64 +1,63 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import Navbar from "./components/Navbar";
-import Typewriter from "typewriter-effect";
 import { motion } from "motion/react";
+import Lenis from "lenis";
+import LandingPage from "./components/LandingPage";
+import About from "./components/About";
+
 
 function App() {
-  const [count, setCount] = useState(0);
+  useEffect(() => {
+    const lenis = new Lenis();
 
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf);
+  }, []);
   return (
     <div className="bg-black font-dmsans">
       <Navbar />
+      <LandingPage />
+      <div className="h-screen flex justify-center items-center">
+        <h1 className="font-jakarta font-black text-white/60 text-9xl tracking-widest">PORTOFOLIO</h1>
+      </div>
       <div>
-        <div className="flex text-white h-screen items-center px-10 justify-center gap-11">
-          <div className="flex flex-col text-6xl font-semibold gap-1 w-[65%] ">
-            <span>Hi there👋</span>
-            <div className="flex gap-4">
-              <p>I'm</p>
-              <Typewriter
-                options={{
-                  strings: ["Rasyid Nuruddin. ", "a Frontend Developer.", "a UI/UX Designer."],
-                  autoStart: true,
-                  loop: true,
-                }}
-              />
-            </div>
-            <p className="text-gray-400 text-lg font-normal font-jakarta w-3/4">I am a Frontend Developer with a passion for creating beautiful and functional user interfaces. I have experience in HTML, CSS, JavaScript, and React. </p>
-          </div>
-          <div className="relative bg-red-500 w-60 h-80 rounded-lg overflow-hidden shadow-[0_0_30px_rgba(200,170,142,0.89)] hover:shadow-[0_0_40px_rgb(200,170,142)] hover:scale-105 transition ease-in-out duration-200 delay-150">
-            <img src="../public/Rasyid.jpg" alt="Rasyid" className="w-full h-full object-cover" />
-          </div>
-        </div>
         <div className="relative overflow-hidden whitespace-nowrap bg-black ">
           <motion.div
-            className="inline-block text-white text-8xl font-bold uppercase"
+            className="inline-block text-white text-7xl font-bold uppercase"
             animate={{ x: ["0%", "-50%"] }}
             transition={{
-              duration: 90,
+              duration: 70,
               repeat: Infinity,
               ease: "linear",
             }}
           >
-            <span className="mr-3">FRONTEND</span>
-            <span className="mr-3">WEB</span>
-            <span className="mr-3">DEVELOPER</span>
-            <span className="mr-3">FRONTEND</span>
-            <span className="mr-3">WEB</span>
-            <span className="mr-3">DEVELOPER</span>
-            <span className="mr-3">FRONTEND</span>
-            <span className="mr-3">WEB</span>
-            <span className="mr-3">DEVELOPER</span>
+            <span className="mr-4">FRONTEND</span>
+            <span className="mr-4">WEB</span>
+            <span className="mr-4">DEVELOPER</span>
+            <span className="mr-4">FRONTEND</span>
+            <span className="mr-4">WEB</span>
+            <span className="mr-4">DEVELOPER</span>
+            <span className="mr-4">FRONTEND</span>
+            <span className="mr-4">WEB</span>
+            <span className="mr-4">DEVELOPER</span>
           </motion.div>
         </div>
         <br />
-        <div className="h-screen flex justify-center  ">
-          <div className="w-[65%] px-3">
-            <h1 className="font-medium font-jakarta text-2xl text-white">About me.</h1>
-            <p className="text-gray-400">Saya mahasiswa teknik informatika dari politeknik elektronika negeri surabaya, a junior frontend developer using React js, laravel, tailwind, html, css, javascript as a technologies and language</p>
+        <h1 className="text-center text-white mt-10 text-2xl mb-6 font-jakarta">About, Education, Skills.</h1>
+        <div className="flex items-center justify-center gap-10 px-10 h-screen">
+          <div className=" w-[50%] outline outline-1 outline-white py-2 px-4 rounded">
+          <About />
           </div>
-
+          <div className=" px-3  w-[50%] outline outline-1 outline-white py-2 rounded">
+            <h1 className="font-medium font-jakarta text-2xl text-white">Skills.</h1>
+            <p className="text-gray-400">React JS, Tailwind CSS, HTML, CSS, Javascript</p>
+          </div>
         </div>
       </div>
     </div>
