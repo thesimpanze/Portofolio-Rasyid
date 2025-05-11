@@ -1,12 +1,14 @@
 import { useEffect, useRef, useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
 import Navbar from "./components/Navbar";
 import { motion } from "motion/react";
 import Lenis from "lenis";
 import LandingPage from "./components/LandingPage";
 import About from "./components/About";
-
+import SkillSet from "./components/SkillSet";
+import GitHubCalendar from "react-github-calendar";
+import ParallaxText from "./components/ParallaxText";
+import CardList from "./components/CardList";
+import Contact from "./components/Contact";
 
 function App() {
   useEffect(() => {
@@ -23,42 +25,36 @@ function App() {
     <div className="bg-black font-dmsans">
       <Navbar />
       <LandingPage />
-      <div className="h-screen flex justify-center items-center">
+      <div className="h-[95vh] flex justify-center items-center">
         <h1 className="font-jakarta font-black text-white/60 text-9xl tracking-widest">PORTOFOLIO</h1>
       </div>
       <div>
-        <div className="relative overflow-hidden whitespace-nowrap bg-black ">
-          <motion.div
-            className="inline-block text-white text-7xl font-bold uppercase"
-            animate={{ x: ["0%", "-50%"] }}
-            transition={{
-              duration: 70,
-              repeat: Infinity,
-              ease: "linear",
-            }}
-          >
-            <span className="mr-4">FRONTEND</span>
-            <span className="mr-4">WEB</span>
-            <span className="mr-4">DEVELOPER</span>
-            <span className="mr-4">FRONTEND</span>
-            <span className="mr-4">WEB</span>
-            <span className="mr-4">DEVELOPER</span>
-            <span className="mr-4">FRONTEND</span>
-            <span className="mr-4">WEB</span>
-            <span className="mr-4">DEVELOPER</span>
+        <div className="-z-0 overflow-hidden">
+          <ParallaxText direction={500} baseVelocity={-1}>
+            FRONTEND WEB DEVELOPER
+          </ParallaxText>
+        </div>
+
+        <div className="flex flex-col items-center justify-center gap-7 px-10 ">
+          <div className=" w-[60%]  py-2 px-4 ">
+            <About />
+          </div>
+          <motion.div drag whileHover={{ rotate: 3, scale: 1.05 }} className="bg-[#0d1117] py-3 px-4 text-white rounded-lg flex justify-center items-center shadow-[0_0_40px_rgb(76_101_137)] ">
+            <GitHubCalendar colorScheme="dark" username="thesimpanze" />
           </motion.div>
-        </div>
-        <br />
-        <h1 className="text-center text-white mt-10 text-2xl mb-6 font-jakarta">About, Education, Skills.</h1>
-        <div className="flex items-center justify-center gap-10 px-10 h-screen">
-          <div className=" w-[50%] outline outline-1 outline-white py-2 px-4 rounded">
-          <About />
-          </div>
-          <div className=" px-3  w-[50%] outline outline-1 outline-white py-2 rounded">
+          <div className=" px-3  w-[60%]  py-2 rounded flex flex-col gap-4">
             <h1 className="font-medium font-jakarta text-2xl text-white">Skills.</h1>
-            <p className="text-gray-400">React JS, Tailwind CSS, HTML, CSS, Javascript</p>
+            <SkillSet />
           </div>
         </div>
+      </div>
+      <div className="text-white flex flex-col items-center justify-center mt-16">
+        <div className="flex justify-center ">
+          <CardList />
+        </div>
+      </div>
+      <div className="flex justify-center h-screen mt-16 ">
+        <Contact />
       </div>
     </div>
   );

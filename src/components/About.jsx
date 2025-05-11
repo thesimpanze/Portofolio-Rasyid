@@ -1,32 +1,27 @@
-import { motion, useScroll, useTransform } from "motion/react";
-import { useRef } from "react";
 
-const ScrollRevealText = ({ children, className = "" }) => {
-  const textRef = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: textRef,
-    offset: ["start end", "end center"],
-  });
+import ScrollFloat from "./ScrollFloat";
+import ScrollReveal from "./ScrollRevealText";
 
-  const textColor = useTransform(scrollYProgress, [0, 1], ["rgb(17, 20, 32)", "rgb(255, 255, 255)"]);
-
-  return (
-    <motion.p ref={textRef} style={{ color: textColor }} className={className}>
-      {children}
-    </motion.p>
-  );
-};
 const About = () => {
   return (
-    <>
-      <h1 className="font-medium font-jakarta text-2xl text-white">About me.</h1>
-      <ScrollRevealText className="mb-2">
-        Saya mahasiswa teknik informatika dari politeknik elektronika negeri surabaya, a junior frontend developer using React js, laravel, tailwind, html, css, javascript as a technologies and language
-      </ScrollRevealText>
+    <div className="px-4 py-8">
+      <ScrollFloat animationDuration={1} ease="back.inOut(2)" scrollStart="center bottom+=50%" scrollEnd="bottom bottom-=40%" stagger={0.03} textClassName="font-jakarta text-3xl text-white ">
+        About me.
+      </ScrollFloat>
+      <ScrollReveal textClassName="text-xl mb-2 text-gray-400" baseOpacity={0} enableBlur={true} baseRotation={2} blurStrength={10}>
+        I’m an Informatics Engineering student at Politeknik Elektronika Negeri Surabaya (PENS) and a junior frontend developer passionate about building user-friendly web applications. I work with technologies like React.js, Laravel,
+        Tailwind CSS, HTML, CSS, and JavaScript. I enjoy turning UI/UX designs into clean, responsive interfaces and continuously learning new tools to improve both functionality and user experience in every project I build.
+      </ScrollReveal>
+      <div className="border-b-2 border-gray-400 pt-3 mb-3" />
 
-      <h1 className="font-medium font-jakarta text-2xl text-white">Education.</h1>
-      <ScrollRevealText className="mb-2">2023 - present: collage student of Informatic Engineering at Electronic Engineering Polytechnic Institute of Surabaya</ScrollRevealText>
-    </>
+      <ScrollFloat animationDuration={1} ease="back.inOut(2)" scrollStart="center bottom+=30%" scrollEnd="bottom bottom-=30%" stagger={0.03} textClassName="font-jakarta text-3xl text-white ">
+        Education.
+      </ScrollFloat>
+      <ScrollReveal textClassName="text-xl text-gray-400" baseOpacity={0} enableBlur={true} baseRotation={2} blurStrength={10}>
+        2023 - present: collage student of Informatic Engineering at Electronic Engineering Polytechnic Institute of Surabaya
+      </ScrollReveal>
+
+    </div>
   );
 };
 export default About;
