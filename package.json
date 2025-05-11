@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://thesimpanze.github.io/portofolio-rasyid",
+  "homepage": "https://thesimpanze.github.io/Portofolio-Rasyid",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
