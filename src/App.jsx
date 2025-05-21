@@ -22,11 +22,12 @@ function App() {
     requestAnimationFrame(raf);
   }, []);
   return (
-    <div className="bg-black font-dmsans">
+    <div className="bg-black font-dmsans overflow-hidden ">
+      {/* <div className="fixed h-screen font-dmsans text-white bg-black flex justify-center items-center z-50 w-screen font-bold text-2xl">Under Maintenance Der!</div> */}
       <Navbar />
       <LandingPage />
-      <div className="h-[95vh] flex justify-center items-center">
-        <h1 className="font-jakarta font-black text-white/60 text-9xl tracking-widest">PORTOFOLIO</h1>
+      <div className="h-[95vh] flex justify-center items-center" id="home">
+        <h1 className="font-jakarta font-black text-white/60 md:text-9xl text-6xl tracking-widest">PORTOFOLIO</h1>
       </div>
       <div>
         <div className="-z-0 overflow-hidden">
@@ -36,7 +37,7 @@ function App() {
         </div>
 
         <div className="flex flex-col items-center justify-center gap-7 px-10 ">
-          <div className=" w-[60%]  py-2 px-4 ">
+          <div className=" md:w-[60%]  py-2 px-4  " id="about">
             <About />
           </div>
           <motion.div drag whileHover={{ rotate: 3, scale: 1.05 }} className="bg-[#0d1117] py-3 px-4 text-white rounded-lg flex justify-center items-center shadow-[0_0_40px_rgb(76_101_137)] ">
@@ -53,8 +54,13 @@ function App() {
           <CardList />
         </div>
       </div>
-      <div className="flex justify-center h-screen mt-16 ">
+      <div className="flex justify-center px-10 mt-16 md:h-[80vh] " id="contact">
         <Contact />
+      </div>
+      <div className="">
+        <div className="flex justify-center items-center text-white/50 font-jakarta text-sm md:text-base py-4">
+          <p>© 2025 Rasyid Nuruddin. All rights reserved.</p>
+        </div>
       </div>
     </div>
   );

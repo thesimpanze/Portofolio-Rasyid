@@ -57,7 +57,7 @@ export default function ParallaxText({ children, baseVelocity = 100, direction }
       }}
       className="m-0 flex flex-nowrap overflow-hidden  "
     >
-      <motion.div style={{ x }} className="flex gap-0 font-black font-dmsans whitespace-nowrap text-2xl  uppercase md:text-8xl text-white">
+      <motion.div style={{ x }} className="flex gap-0 font-black font-dmsans whitespace-nowrap text-5xl  uppercase md:text-8xl text-white">
         {[...Array(4)].map((_, i) => (
           <motion.span key={i} style={{ skew: skewVelocityFactor }} className="mr-10 block">
             {children}

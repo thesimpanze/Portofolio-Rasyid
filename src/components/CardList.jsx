@@ -16,8 +16,8 @@ const List = [
 const CardList = () => {
   return (
     <div className="flex flex-col   w-[80%]">
-      <h1 className="font-jakarta text-2xl font-medium text-left mb-3">Projects.</h1>
-      <div className=" grid grid-cols-2 gap-6 items-center ">
+      <h1 className="font-jakarta text-2xl font-medium text-left mb-3">Website Projects.</h1>
+      <div className=" grid md:grid-cols-2 gap-6 items-center ">
         {List.map((item) => (
           <div key={item.id} className="flex justify-center items-center">
             <Card image={item.image} />

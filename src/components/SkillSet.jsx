@@ -46,7 +46,7 @@ const SkillSet = () => {
   return (
     <div className="flex flex-wrap  gap-5 ">
       {Skill.map((skill) => (
-        <Magnet  disabled={false} magnetStrength={50}>
+        <Magnet  disabled={false} magnetStrength={10}>
           <div className="text-white" key={skill.id}>
             <img src={skill.icon} alt="" width={70} className="grayscale hover:grayscale-0" />
           </div>

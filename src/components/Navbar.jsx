@@ -36,13 +36,14 @@ const Navbar = () => {
         transition={{ duration: 0.6, ease: "easeInOut" }}
       >
         <div className="bg-gray-500/0 outline outline-1 outline-white/15 text-gray-300 backdrop-blur-sm rounded-full font-light text-lg mt-5 px-8 py-2 flex justify-center items-center gap-8 font-jakarta shadow-[0_0_15px_rgba(255,255,255,0.4)] hover:shadow-[0_0_25px_rgba(255,255,255,0.6)] hover:scale-105 transition-all duration-200 ease-in-out delay-100">
-          <a href="#" className="hover:underline">
+          <a href="#home" className="hover:underline">
             Home
           </a>
-          <a href="#" className="hover:underline">
+          
+          <a href="#about" className="hover:underline">
             About
-          </a>
-          <a href="#" className="hover:underline">
+            </a>
+          <a href="#contact" className="hover:underline">
             Contact
           </a>
         </div>
