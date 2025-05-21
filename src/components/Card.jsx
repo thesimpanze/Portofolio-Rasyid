@@ -47,7 +47,7 @@ const Card = ({ image }) => {
     x.set(0);
     y.set(0);
   };
-  console.log(image);
+  
   return (
     <motion.div
       ref={ref}

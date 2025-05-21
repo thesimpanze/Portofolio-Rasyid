@@ -8,7 +8,7 @@ const LandingPage = () => {
   const titleY = useTransform(scrollY, [0, 460], [0, -200]);
 
   return (
-    <motion.div style={{ y: titleY }} className="absolute flex flex-col-reverse md:flex-row items-center justify-center gap-10 text-white h-screen px-6 md:px-12 bg-black/0 backdrop-blur-md z-10 overflow-hidden">
+    <motion.div style={{ y: titleY }} className="absolute flex flex-col-reverse md:flex-row items-center justify-center gap-10 text-white h-screen px-6 md:px-12 bg-black/0 md:backdrop-blur-md backdrop-blur-sm z-10 overflow-hidden">
       <div className="flex flex-col text-4xl md:text-7xl font-semibold gap-3 w-full md:w-[70%] text-center md:text-left">
         <div className="relative overflow-hidden">
           <motion.div

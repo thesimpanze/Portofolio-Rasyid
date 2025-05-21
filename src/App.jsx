@@ -27,7 +27,7 @@ function App() {
       <Navbar />
       <LandingPage />
       <div className="h-[95vh] flex justify-center items-center" id="home">
-        <h1 className="font-jakarta font-black text-white/60 md:text-9xl text-6xl tracking-widest">PORTOFOLIO</h1>
+        <h1 className="font-jakarta font-black text-white/60 md:text-9xl text-6xl tracking-widest ">PORTOFOLIO</h1>
       </div>
       <div>
         <div className="-z-0 overflow-hidden">

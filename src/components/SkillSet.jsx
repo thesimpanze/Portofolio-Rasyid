@@ -1,58 +1,72 @@
+// Import Magnet component
 import Magnet from "./Magnet";
 
+// Import semua SVG secara langsung
+import HtmlSvg from "../assets/html.svg";
+import CssSvg from "../assets/css.svg";
+import JsSvg from "../assets/js.svg";
+import TailwindSvg from "../assets/tailwind.svg";
+import ReactSvg from "../assets/react.svg";
+import LaravelSvg from "../assets/laravel.svg";
+import FigmaSvg from "../assets/figma.svg";
+import FramerMotionSvg from "../assets/FramerMotion.svg";
+
+// Array data skill yang menggunakan import langsung
 const Skill = [
   {
     id: 1,
     name: "HTML",
-    icon: "src/assets/html.svg",
+    icon: HtmlSvg,
   },
   {
     id: 2,
     name: "CSS",
-    icon: "src/assets/css.svg",
+    icon: CssSvg,
   },
   {
     id: 3,
     name: "Javascript",
-    icon: "src/assets/js.svg",
+    icon: JsSvg,
   },
   {
     id: 4,
-    name: "tailiwind",
-    icon: "src/assets/tailwind.svg",
+    name: "Tailwind",
+    icon: TailwindSvg,
   },
   {
     id: 5,
     name: "React",
-    icon: "src/assets/react.svg",
+    icon: ReactSvg,
   },
   {
     id: 6,
     name: "Laravel",
-    icon: "src/assets/laravel.svg",
+    icon: LaravelSvg,
   },
   {
     id: 7,
     name: "Figma",
-    icon: "src/assets/figma.svg",
+    icon: FigmaSvg,
   },
   {
     id: 8,
     name: "Motion",
-    icon: "src/assets/FramerMotion.svg",
+    icon: FramerMotionSvg,
   },
 ];
+
 const SkillSet = () => {
   return (
-    <div className="flex flex-wrap  gap-5 ">
+    <div className="flex flex-wrap gap-5">
       {Skill.map((skill) => (
-        <Magnet  disabled={false} magnetStrength={10}>
-          <div className="text-white" key={skill.id}>
-            <img src={skill.icon} alt="" width={70} className="grayscale hover:grayscale-0" />
+        <Magnet key={skill.id} disabled={false} magnetStrength={10}>
+          <div className="text-white">
+            <img src={skill.icon} alt={skill.name} width={70} className="grayscale hover:grayscale-0" />
           </div>
         </Magnet>
       ))}
     </div>
   );
 };
+
 export default SkillSet;
