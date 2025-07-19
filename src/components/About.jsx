@@ -1,6 +1,6 @@
 
-import ScrollFloat from "./ScrollFloat";
-import ScrollReveal from "./ScrollRevealText";
+import ScrollFloat from "./effects/ScrollFloat";
+import ScrollReveal from "./effects/ScrollRevealText";
 
 const About = () => {
   return (

@@ -1,6 +1,6 @@
 import Lanyard from "./Lanyard";
 import { FaInstagram, FaLinkedin, FaWhatsapp } from "react-icons/fa";
-import TextPressure from "./TextPressure";
+import TextPressure from "./effects/TextPressure";
 
 const Contact = () => {
   return (

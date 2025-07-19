@@ -1,5 +1,5 @@
 // Import Magnet component
-import Magnet from "./Magnet";
+import Magnet from "./effects/Magnet";
 
 // Import semua SVG secara langsung
 import HtmlSvg from "../assets/html.svg";

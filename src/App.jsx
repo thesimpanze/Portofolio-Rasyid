@@ -6,7 +6,7 @@ import LandingPage from "./components/LandingPage";
 import About from "./components/About";
 import SkillSet from "./components/SkillSet";
 import GitHubCalendar from "react-github-calendar";
-import ParallaxText from "./components/ParallaxText";
+import ParallaxText from "./components/effects/ParallaxText";
 import CardList from "./components/CardList";
 import Contact from "./components/Contact";
 
