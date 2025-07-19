@@ -10,6 +10,7 @@ import ReactSvg from "../assets/react.svg";
 import LaravelSvg from "../assets/laravel.svg";
 import FigmaSvg from "../assets/figma.svg";
 import FramerMotionSvg from "../assets/FramerMotion.svg";
+import reactRouter from '../assets/react-router.svg';
 
 // Array data skill yang menggunakan import langsung
 const Skill = [
@@ -53,6 +54,11 @@ const Skill = [
     name: "Motion",
     icon: FramerMotionSvg,
   },
+  {
+    id: 9,
+    name: "React Router",
+    icon: reactRouter,
+  },
 ];
 
 const SkillSet = () => {
@@ -60,7 +66,7 @@ const SkillSet = () => {
     <div className="flex flex-wrap gap-5">
       {Skill.map((skill) => (
         <Magnet key={skill.id} disabled={false} magnetStrength={10}>
-          <div className="text-white">
+          <div className="text-white ">
             <img src={skill.icon} alt={skill.name} width={70} className="grayscale hover:grayscale-0" />
           </div>
         </Magnet>
