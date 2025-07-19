@@ -1,5 +1,7 @@
 import { motion, useScroll } from "framer-motion";
 import { useEffect, useState } from "react";
+import GlassSurface from "./effects/GlassSurface";
+
 
 const Navbar = () => {
   const { scrollYProgress } = useScroll();
@@ -11,7 +13,7 @@ const Navbar = () => {
       const currentScrollY = window.scrollY;
 
       
-      if (currentScrollY > lastScrollY && currentScrollY > 0) {
+      if (currentScrollY > lastScrollY && currentScrollY > 300) {
         setShowNavbar(false);
       } else {
       
@@ -31,22 +33,23 @@ const Navbar = () => {
         className="fixed top-0 w-full flex justify-center -translate-x-1/2 z-40"
         animate={{
           y: showNavbar ? 0 : -100,
-          
         }}
         transition={{ duration: 0.6, ease: "easeInOut" }}
       >
-        <div className="bg-gray-500/0 outline outline-1 outline-white/15 text-gray-300 backdrop-blur-sm rounded-full font-light text-lg mt-5 px-8 py-2 flex justify-center items-center gap-8 font-jakarta shadow-[0_0_15px_rgba(255,255,255,0.4)] hover:shadow-[0_0_25px_rgba(255,255,255,0.6)] hover:scale-105 transition-all duration-200 ease-in-out delay-100">
-          <a href="#home" className="hover:underline">
-            Home
-          </a>
-          
-          <a href="#about" className="hover:underline">
-            About
+        <GlassSurface width={200} height={50} borderRadius={24} className="text-white font-light text-lg gap-8 font-jakarta mt-8">
+          {/* <div className=" text-white font-light text-lg mt-5 flex justify-center items-center gap-8 font-jakarta "> */}
+            <a href="#home" className="hover:underline">
+              Home
             </a>
-          <a href="#contact" className="hover:underline">
-            Contact
-          </a>
-        </div>
+
+            <a href="#about" className="hover:underline">
+              About
+            </a>
+            <a href="#contact" className="hover:underline">
+              Contact
+            </a>
+          {/* </div> */}
+        </GlassSurface>
       </motion.div>
     </div>
   );
