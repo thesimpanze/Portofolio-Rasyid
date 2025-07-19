@@ -36,8 +36,7 @@ const Navbar = () => {
         }}
         transition={{ duration: 0.6, ease: "easeInOut" }}
       >
-        <GlassSurface width={200} height={50} borderRadius={24} className="text-white font-light text-lg gap-8 font-jakarta mt-8">
-          {/* <div className=" text-white font-light text-lg mt-5 flex justify-center items-center gap-8 font-jakarta "> */}
+        <GlassSurface width={'fit'} height={'fit'} borderRadius={24} className="text-white font-light text-lg gap-8 font-jakarta mt-8 p-3 ">
             <a href="#home" className="hover:underline">
               Home
             </a>
@@ -48,7 +47,6 @@ const Navbar = () => {
             <a href="#contact" className="hover:underline">
               Contact
             </a>
-          {/* </div> */}
         </GlassSurface>
       </motion.div>
     </div>

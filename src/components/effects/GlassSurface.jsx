@@ -19,8 +19,8 @@ const useDarkMode = () => {
 
 const GlassSurface = ({
   children,
-  width = 200,
-  height = 80,
+  width = 'fit',
+  height = 'fit',
   borderRadius = 20,
   borderWidth = 0.07,
   brightness = 50,
@@ -270,7 +270,7 @@ const GlassSurface = ({
   return (
     <div
       ref={containerRef}
-      className={`${glassSurfaceClasses} ${focusVisibleClasses} ${className}`}
+      className={`${glassSurfaceClasses} ${focusVisibleClasses} ${className} px-5`}
       style={getContainerStyles()}
     >
       <svg
