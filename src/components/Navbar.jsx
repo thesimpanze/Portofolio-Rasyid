@@ -30,11 +30,7 @@ const Navbar = () => {
   return (
     <div className="w-full">
       <motion.div
-        className="fixed top-0 w-full flex justify-center -translate-x-1/2 z-40"
-        animate={{
-          y: showNavbar ? 0 : -100,
-        }}
-        transition={{ duration: 0.6, ease: "easeInOut" }}
+        className="fixed top-0 w-full flex justify-center -translate-x-1/2 z-40 left-1/2"
       >
         <GlassSurface width={'fit'} height={'fit'} borderRadius={24} className="text-white font-light text-lg gap-8 font-jakarta mt-8 p-3 ">
             <a href="#home" className="hover:underline">

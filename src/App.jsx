@@ -54,7 +54,7 @@ function App() {
           <CardList />
         </div>
       </div>
-      <div className="flex justify-center px-10 mt-16 md:h-[80vh] " id="contact">
+      <div className="flex justify-center px-10 -mt-5 md:h-[80vh] " id="contact">
         <Contact />
       </div>
       <div className="">
