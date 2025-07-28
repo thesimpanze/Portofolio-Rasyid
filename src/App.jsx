@@ -30,7 +30,7 @@ const useLenisScroll = () => {
     rafRef.current = requestAnimationFrame(raf);
 
     return () => {
-      // Clean up ketika komponen unmount
+      
       lenisRef.current?.destroy();
       cancelAnimationFrame(rafRef.current);
     };
@@ -39,8 +39,7 @@ const useLenisScroll = () => {
 function App() {
   useLenisScroll();
   return (
-    <div className="bg-black font-dmsans overflow-hidden min-h-screen">
-      {/* <div className="fixed h-screen font-dmsans text-white bg-black flex justify-center items-center z-50 w-screen font-bold text-2xl">Under Maintenance Der!</div> */}
+    <div className="bg-black font-dmsans min-h-screen scrollbar-none">
       <Navbar />
       <LandingPage />
       <div className="h-[95vh] flex justify-center items-center" id="home">
@@ -76,34 +75,8 @@ function App() {
       </div>
       <div className="text-white flex flex-col items-center justify-center mt-16">
         
-          {/* <CardList /> */}
-          <ScrollStack className=" overflow-hidden h-screen">
-            <ScrollStackItem
-              className={` text-black shadow-[0_0_30px_rgba(0,0,0,0.1)] bg-amber-50 rounded-lg`}
-            >
-              <div className={`text-black w-full h-full`}>
-                <h2>Card </h2>
-                <p>This is the card in the stack</p>
-              </div>
-            </ScrollStackItem>
-            <ScrollStackItem
-              className={` text-black shadow-[0_0_30px_rgba(0,0,0,0.1)] bg-amber-50 rounded-lg`}
-            >
-              <div className={`text-black w-full h-full`}>
-                <h2>Card </h2>
-                <p>This is the card in the stack</p>
-              </div>
-            </ScrollStackItem>
-            <ScrollStackItem
-              className={` text-black shadow-[0_0_30px_rgba(0,0,0,0.1)] bg-amber-50 rounded-lg`}
-            >
-              <div className={`text-black w-full h-full`}>
-                <h2>Card </h2>
-                <p>This is the card in the stack</p>
-              </div>
-            </ScrollStackItem>
-          </ScrollStack>
-        
+          <CardList />
+         
       </div>
       <div
         className="flex justify-center px-10 mt-10 md:h-[80vh] "
