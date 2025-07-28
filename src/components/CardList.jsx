@@ -17,43 +17,23 @@ const List = [
 ];
 const CardList = () => {
   return (
-    <div className="flex flex-col h-screen  w-screen">
+    <div className="flex flex-col  w-screen ">
       <h1 className="font-jakarta text-2xl font-medium text-left mb-3">
         Website Projects.
       </h1>
-      {/* <div className=" grid md:grid-cols-2 gap-6 items-center ">
-        {List.map((item) => (
-          <div key={item.id} className="flex justify-center items-center">
-            <Card image={item.image} />
-          </div>
-        ))}
-      </div> */}
-      <div className="h-screen overflow-y-auto">
+      <div className="h-screen">
         <ScrollStack className="h-screen overflow-hidden">
-          <ScrollStackItem className="bg-amber-50 text-black">
-            <div className="bg-amber-50 text-black w-full">
-              <h2>Card 1</h2>
-              <p>This is the first card in the stack</p>
-            </div>
-          </ScrollStackItem>
-          <ScrollStackItem>
-            <div className="bg-amber-50 text-black">
-              <h2>Card 2</h2>
-              <p>This is the second card in the stack</p>
-            </div>
-          </ScrollStackItem>
-          <ScrollStackItem>
-            <div className="bg-red-50 text-black">
-              <h2>Card 3</h2>
-              <p>This is the third card in the stack</p>
-            </div>
-          </ScrollStackItem>
-          <ScrollStackItem>
-            <div className="bg-red-50 text-black">
-              <h2>Card 3</h2>
-              <p>This is the third card in the stack</p>
-            </div>
-          </ScrollStackItem>
+          {List.map((item) => (
+            <ScrollStackItem
+              className={` text-black shadow-[0_0_30px_rgba(0,0,0,0.1)] bg-amber-50 rounded-lg`}
+              key={item.id}
+            >
+              <div className={`text-black w-full h-full`}>
+                <h2>Card {item.id}</h2>
+                <p>This is the {item.id} card in the stack</p>
+              </div>
+            </ScrollStackItem>
+          ))}
         </ScrollStack>
       </div>
     </div>

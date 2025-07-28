@@ -3,7 +3,7 @@ import Lenis from "lenis";
 
 export const ScrollStackItem = ({ children, itemClassName = "" }) => (
   <div
-    className={`scroll-stack-card relative w-full h-80 my-8 p-12 rounded-[40px] shadow-[0_0_30px_rgba(0,0,0,0.1)] box-border origin-top will-change-transform ${itemClassName}`.trim()}
+    className={`scroll-stack-card relative w-full h-80 my-8 bg-amber-50 box-border origin-top will-change-transform ${itemClassName}`.trim()}
     style={{
       backfaceVisibility: "hidden",
       transformStyle: "preserve-3d",
@@ -249,7 +249,7 @@ const ScrollStack = ({
 
   return (
     <div
-      className={`relative w-full h-full overflow-y-auto overflow-x-visible ${className}`.trim()}
+      className={`relative w-full h-full overflow-x-hidden ${className}`.trim()}
       ref={scrollerRef}
       style={{
         overscrollBehavior: "contain",
@@ -260,9 +260,9 @@ const ScrollStack = ({
         willChange: "scroll-position",
       }}
     >
-      <div className="scroll-stack-inner pt-[20vh] px-20 pb-[200vh] min-h-[200vh]">
+      <div className="scroll-stack-inner px-20 bg-green-50">
         {children}
-        {/* Spacer so the last pin can release cleanly */}
+        
         <div className="scroll-stack-end w-full h-px" />
       </div>
     </div>
